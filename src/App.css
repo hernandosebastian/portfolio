@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #root {
   max-width: 1280px;
@@ -41,5 +43,53 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@font-face {
+  font-family: "Neue Montreal Regular";
+  src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Italic";
+  src: url("/fonts/NeueMontreal-Italic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Light";
+  src: url("/fonts/NeueMontreal-Light.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Light Italic";
+  src: url("/fonts/NeueMontreal-LightItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium";
+  src: url("/fonts/NeueMontreal-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium Italic";
+  src: url("/fonts/NeueMontreal-MediumItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url("/fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Bold Italic";
+  src: url("/fonts/NeueMontreal-BoldItalic.otf") format("opentype");
+  font-display: swap;
 }
 
