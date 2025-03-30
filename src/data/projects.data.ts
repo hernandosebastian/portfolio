@@ -12,8 +12,8 @@ export const projectsData: Project[] = [
       "Aplicación web que permite a usuarios registrar y visualizar sus estados de ánimo.\n Incluye sistema de autenticación con emails personalizados, gestión de perfiles con avatares personalizables, registro de estados de ánimo con descripción personalizadas y dashboard interactivo con visualizaciones estadísticas en tiempo real de los estados registrados a lo largo del tiempo.",
     short_description:
       "Aplicación web que permite a usuarios registrar y visualizar sus estados de ánimo.",
-    video: "/src/assets/projects/my-mood/my-mood-web-app-example.mp4",
-    logo: "/src/assets/logos/my-mood-logo.png",
+    video: "/assets/projects/my-mood/my-mood-web-app-example.mp4",
+    logo: "/assets/logos/my-mood-logo.png",
     internal_link: "my-mood",
     autority: Autority.PERSONAL,
     hasVideo: true,
@@ -42,115 +42,115 @@ export const projectsData: Project[] = [
     website_url: "https://my-mood.com.ar/",
     screenshots: [
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-homepage.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-homepage.png",
         alt: "Página principal de My Mood",
         legend: "Página principal de My Mood",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-homepage-logged.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-homepage-logged.png",
         alt: "Página principal de My Mood con el usuario logueado",
         legend: "Página principal de My Mood con el usuario logueado",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-create-track.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-create-track.png",
         alt: "Vista para registrar un humor en un día no registrado previamente",
         legend:
           "Vista para registrar un humor en un día no registrado previamente",
       },
 
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-update-track.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-update-track.png",
         alt: "Vista para actualizar un humor en un día registrado previamente",
         legend:
           "Vista para actualizar un humor en un día registrado previamente",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-edit-profile.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-edit-profile.png",
         alt: "Vista para editar el perfil del usuario",
         legend: "Vista para editar el perfil del usuario",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-stats-last-3-months.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-stats-last-3-months.png",
         alt: "Vista del dashboard del usuario con las estadísticas de los últimos 3 meses",
         legend:
           "Vista del dashboard del usuario con las estadísticas de los últimos 3 meses",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-stats-this-month-and-history.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-stats-this-month-and-history.png",
         alt: "Vista del dashboard del usuario con las estadísticas de este mes y el historial de estados de ánimo",
         legend:
           "Vista del dashboard del usuario con las estadísticas de este mes y el historial de estados de ánimo",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-login.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-login.png",
         alt: "Vista de la página de login de My Mood",
         legend: "Vista de la página de login de My Mood",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-registration.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-registration.png",
         alt: "Vista de la página de registro de My Mood",
         legend: "Vista de la página de registro de My Mood",
       },
 
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-confirm-sign-up.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-confirm-sign-up.png",
         alt: "Vista de la página de confirmación de registro de My Mood",
         legend: "Vista de la página de confirmación de registro de My Mood",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-forgot-password.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-forgot-password.png",
         alt: "Vista de la página de recuperación de contraseña de My Mood",
         legend: "Vista de la página de recuperación de contraseña de My Mood",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-confirm-password.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-confirm-password.png",
         alt: "Vista de la página de restablecimiento de contraseña de My Mood",
         legend:
           "Vista de la página de restablecimiento de contraseña de My Mood",
       },
 
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-email-authentication.jpg",
+        src: "/assets/projects/my-mood/screenshots/my-mood-email-authentication.jpg",
         alt: "Correo de autenticación de My Mood",
         legend: "Correo de autenticación de My Mood",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-create-track-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-create-track-responsive.png",
         alt: "Vista para registrar un humor en un día no registrado previamente en versión responsive",
         legend:
           "Vista para registrar un humor en un día no registrado previamente en versión responsive",
       },
 
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-update-track-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-update-track-responsive.png",
         alt: "Vista para actualizar un humor en un día registrado previamente en versión responsive",
         legend:
           "Vista para actualizar un humor en un día registrado previamente en versión responsive",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-edit-profile-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-edit-profile-responsive.png",
         alt: "Vista para editar el perfil del usuario en versión responsive",
         legend: "Vista para editar el perfil del usuario en versión responsive",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-stats-last-3-months-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-stats-last-3-months-responsive.png",
         alt: "Vista del dashboard del usuario con las estadísticas de los últimos 3 meses en versión responsive",
         legend:
           "Vista del dashboard del usuario con las estadísticas de los últimos 3 meses en versión responsive",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-stats-this-month-and-history-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-stats-this-month-and-history-responsive.png",
         alt: "Vista del dashboard del usuario con las estadísticas de este mes y el historial de estados de ánimo en versión responsive",
         legend:
           "Vista del dashboard del usuario con las estadísticas de este mes y el historial de estados de ánimo en versión responsive",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-sidebar-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-sidebar-responsive.png",
         alt: "Vista del sidebar de My Mood en versión responsive",
         legend: "Vista del sidebar de My Mood en versión responsive",
       },
       {
-        src: "/src/assets/projects/my-mood/screenshots/my-mood-sidebar-open-options-responsive.png",
+        src: "/assets/projects/my-mood/screenshots/my-mood-sidebar-open-options-responsive.png",
         alt: "Vista del sidebar de My Mood en versión responsive con las opciones abiertas",
         legend:
           "Vista del sidebar de My Mood en versión responsive con las opciones abiertas",
@@ -163,8 +163,8 @@ export const projectsData: Project[] = [
       "LotTrackr es una plataforma tecnológica inmobiliaria que se centra en simplificar el proceso de compra y venta de viviendas y terrenos dentro de desarrollos urbanos planificados.",
     short_description:
       "Plataforma inmobiliaria para simplificar compra y venta de propiedades.",
-    video: "/src/assets/projects/lottrackr/lottrackr-builder-estimator.mp4",
-    image: "/src/assets/projects/lottrackr/lottrackr-homepage.png",
+    video: "/assets/projects/lottrackr/lottrackr-builder-estimator.mp4",
+    image: "/assets/projects/lottrackr/lottrackr-homepage.png",
     logo: "src/assets/logos/bigger-logo.jpg",
     internal_link: "lottrackr",
     autority: Autority.BIGGER,
@@ -193,68 +193,68 @@ export const projectsData: Project[] = [
     website_url: "https://lottrackr.com.au/",
     screenshots: [
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-house-information.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-house-information.png",
         alt: "Vista de la información de la casa en la herramienta de estimación de negocios",
         legend:
           "Vista de la información de la casa en la herramienta de estimación de negocios",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-facade-selection.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-facade-selection.png",
         alt: "Vista de la selección de fachadas en la herramienta de estimación de negocios",
         legend:
           "Vista de la selección de fachadas en la herramienta de estimación de negocios",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-facade-selection-with-quote-summary-open.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-facade-selection-with-quote-summary-open.png",
         alt: "Vista de la selección de fachadas en la herramienta de estimación de negocios con el resumen de la cotización abierto",
         legend:
           "Vista de la selección de fachadas en la herramienta de estimación de negocios con el resumen de la cotización abierto",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-optional-upgrades.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-optional-upgrades.png",
         alt: "Vista de las opciones de mejoras opcionales en la herramienta de estimación de negocios",
         legend:
           "Vista de las opciones de mejoras opcionales en la herramienta de estimación de negocios",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-summary.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-summary.png",
         alt: "Vista del resumen de la casa con todas sus opciones seleccionadas en la herramienta de estimación de negocios",
         legend:
           "Vista del resumen de la casa con todas sus opciones seleccionadas en la herramienta de estimación de negocios",
       },
 
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-summary-with-form-open.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-summary-with-form-open.png",
         alt: "Vista del resumen de la casa con todas sus opciones seleccionadas en la herramienta de estimación de negocios con el formulario de contacto abierto",
         legend:
           "Vista del resumen de la casa con todas sus opciones seleccionadas en la herramienta de estimación de negocios con el formulario de contacto abierto",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/email-builder-estimator-user-template.png",
+        src: "/assets/projects/lottrackr/screenshots/email-builder-estimator-user-template.png",
         alt: "Vista del correo de notificación de la casa seleccionada al usuario",
         legend:
           "Vista del correo de notificación de la casa seleccionada al usuario",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/admin-panel-add-inclusion.png",
+        src: "/assets/projects/lottrackr/screenshots/admin-panel-add-inclusion.png",
         alt: "Vista del panel de administración de LotTrackr con el formulario para añadir una inclusión",
         legend:
           "Vista del panel de administración de LotTrackr con el formulario para añadir una inclusión",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/admin-panel-view-inclusion.png",
+        src: "/assets/projects/lottrackr/screenshots/admin-panel-view-inclusion.png",
         alt: "Vista del panel de administración de LotTrackr con la lista de inclusión",
         legend:
           "Vista del panel de administración de LotTrackr con la lista de inclusión",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-summary-mobile-responsive.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-summary-mobile-responsive.png",
         alt: "Vista del resumen de la casa con todas sus opciones seleccionadas en la herramienta de estimación de negocios en versión mobile",
         legend:
           "Vista del resumen de la casa con todas sus opciones seleccionadas en la herramienta de estimación de negocios en versión mobile",
       },
       {
-        src: "/src/assets/projects/lottrackr/screenshots/builder-estimator-optional-upgrades-mobile-responsive.png",
+        src: "/assets/projects/lottrackr/screenshots/builder-estimator-optional-upgrades-mobile-responsive.png",
         alt: "Vista de las opciones de mejoras opcionales en la herramienta de estimación de negocios en versión mobile",
         legend:
           "Vista de las opciones de mejoras opcionales en la herramienta de estimación de negocios en versión mobile",
@@ -267,8 +267,8 @@ export const projectsData: Project[] = [
       "CricConnect es una plataforma diseñada para que los fanáticos del cricket se conecten y compartan su conocimiento sobre el deporte, ofreciendo un espacio para la discusión.",
     short_description:
       "Plataforma para fanáticos del cricket para compartir conocimientos.",
-    video: "/src/assets/projects/cricconnect/cricconnect-sponsors.mp4",
-    image: "/src/assets/projects/cricconnect/cricconnect-homepage.png",
+    video: "/assets/projects/cricconnect/cricconnect-sponsors.mp4",
+    image: "/assets/projects/cricconnect/cricconnect-homepage.png",
     logo: "src/assets/logos/bigger-logo.jpg",
     internal_link: "cricconnect",
     autority: Autority.BIGGER,
@@ -298,36 +298,36 @@ export const projectsData: Project[] = [
     website_url: "https://www.cricconnect.com/",
     screenshots: [
       {
-        src: "/src/assets/projects/cricconnect/screenshots/homepage-platinum-sponsor.png",
+        src: "/assets/projects/cricconnect/screenshots/homepage-platinum-sponsor.png",
         alt: "Página principal de CricConnect con un patrocionador Platinum en el carrusel",
         legend:
           "Página principal de CricConnect con un patrocionador Platinum en el carrusel",
       },
       {
-        src: "/src/assets/projects/cricconnect/screenshots/homepage-premium-sponsor.png",
+        src: "/assets/projects/cricconnect/screenshots/homepage-premium-sponsor.png",
         alt: "Página principal de CricConnect con patrocinadores Premium en el sidebar",
         legend:
           "Página principal de CricConnect con patrocinadores Premium en el sidebar",
       },
       {
-        src: "/src/assets/projects/cricconnect/screenshots/question-partner-and-sticky-premium-sponsor.png",
+        src: "/assets/projects/cricconnect/screenshots/question-partner-and-sticky-premium-sponsor.png",
         alt: "Página principal de CricConnect con patrocinadores partner entre una pregunta y respuestas, además de los patrocinadores premium en el sidebar con estilo sticky para que no se pierda de vista",
         legend:
           "Página principal de CricConnect con patrocinadores partner entre una pregunta y respuestas, además de los patrocinadores premium en el sidebar con estilo sticky para que no se pierda de vista",
       },
       {
-        src: "/src/assets/projects/cricconnect/screenshots/homepage-partner-and-sticky-premium-sponsor.png",
+        src: "/assets/projects/cricconnect/screenshots/homepage-partner-and-sticky-premium-sponsor.png",
         alt: "Página principal de CricConnect con patrocinadores partner cada 4 publicaciones y los patrocinadores premium en el sidebar con estilo sticky para que no se pierda de vista",
         legend:
           "Página principal de CricConnect con patrocinadores partner cada 4 publicaciones y los patrocinadores premium en el sidebar con estilo sticky para que no se pierda de vista",
       },
       {
-        src: "/src/assets/projects/cricconnect/screenshots/admin-panel.png",
+        src: "/assets/projects/cricconnect/screenshots/admin-panel.png",
         alt: "Panel de administración de CricConnect",
         legend: "Panel de administración de CricConnect",
       },
       {
-        src: "/src/assets/projects/cricconnect/screenshots/admin-panel-create-modal.png",
+        src: "/assets/projects/cricconnect/screenshots/admin-panel-create-modal.png",
         alt: "Panel de administración de CricConnect con modal para crear patrocinadores",
         legend:
           "Panel de administración de CricConnect con modal para crear patrocinadores",
@@ -341,8 +341,8 @@ export const projectsData: Project[] = [
       "Poulz es una plataforma de streaming que revoluciona el mercado digital, permitiendo a creadores de contenido generar ingresos a través de sus transmisiones de pago.",
     short_description:
       "Plataforma de streaming que permite a creadores generar ingresos.",
-    video: "/src/assets/projects/poulz/poulz-example.mp4",
-    image: "/src/assets/projects/poulz/poulz-homepage.png",
+    video: "/assets/projects/poulz/poulz-example.mp4",
+    image: "/assets/projects/poulz/poulz-homepage.png",
     logo: "src/assets/logos/bigger-logo.jpg",
     internal_link: "poulz",
     autority: Autority.BIGGER,
@@ -368,60 +368,60 @@ export const projectsData: Project[] = [
       "- Frontend: React, TypeScript, React Query. HTML, CSS, Tailwind.\n- Backend: NestJS, NodeJS, TypeScript. Stripe, Stripe Connect, Stellar. Docker\n- Testing y Control de calidad: Cypress, Jest, SuperTest. SonarQube\n- Infraestructura:  AWS Interactive Video Service, AWS IVS Chat. AWS Cognito, AWS SES, AWS S3. AWS Lambda, AWS AppRunner, AWS Amplify\n- Bases de datos: MySQL\n- Herramientas: GitHub, GitHub CI/CD. Postman, AWS CloudWatch",
     screenshots: [
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-streaming.png",
+        src: "/assets/projects/poulz/screenshots/poulz-streaming.png",
         alt: "Vista de la transmisión en vivo de forma unidireccional de Poulz con un usuario interactuando en el chat",
         legend:
           "Vista de la transmisión en vivo de forma unidireccional de Poulz con un usuario interactuando en el chat",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-recharge.png",
+        src: "/assets/projects/poulz/screenshots/poulz-recharge.png",
         alt: "Vista de la página de recarga de tokens de Poulz",
         legend: "Vista de la página de recarga de tokens de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-create-stream.png",
+        src: "/assets/projects/poulz/screenshots/poulz-create-stream.png",
         alt: "Vista de la página de creación de stream de Poulz",
         legend: "Vista de la página de creación de stream de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-homepage.png",
+        src: "/assets/projects/poulz/screenshots/poulz-homepage.png",
         alt: "Página principal de Poulz",
         legend: "Página principal de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-profile-header.png",
+        src: "/assets/projects/poulz/screenshots/poulz-profile-header.png",
         alt: "Vista del header de perfil de Poulz",
         legend: "Vista del header de perfil de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-admin-dashboard-refunds.png",
+        src: "/assets/projects/poulz/screenshots/poulz-admin-dashboard-refunds.png",
         alt: "Vista del dashboard de administración de Poulz con la sección de reembolsos",
         legend:
           "Vista del dashboard de administración de Poulz con la sección de reembolsos",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-calendar.png",
+        src: "/assets/projects/poulz/screenshots/poulz-calendar.png",
         alt: "Vista del calendario de Poulz",
         legend: "Vista del calendario de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-report-list.png",
+        src: "/assets/projects/poulz/screenshots/poulz-report-list.png",
         alt: "Vista de la lista de reportes de Poulz",
         legend: "Vista de la lista de reportes de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-report-modal.png",
+        src: "/assets/projects/poulz/screenshots/poulz-report-modal.png",
         alt: "Vista del modal de reporte de Poulz",
         legend: "Vista del modal de reporte de Poulz",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-stream-card-on-search.png",
+        src: "/assets/projects/poulz/screenshots/poulz-stream-card-on-search.png",
         alt: "Vista de la tarjeta de stream de Poulz en la lista de búsqueda",
         legend:
           "Vista de la tarjeta de stream de Poulz en la lista de búsqueda",
       },
       {
-        src: "/src/assets/projects/poulz/screenshots/poulz-stream-reports.png",
+        src: "/assets/projects/poulz/screenshots/poulz-stream-reports.png",
         alt: "Vista de los reportes de stream de Poulz",
         legend: "Vista de los reportes de stream de Poulz",
       },

@@ -3,7 +3,7 @@ export default function BackgroundDecoration() {
     <div className="absolute top-0 left-0 w-full max-w-[972px] h-[400px] lg:h-[700px] z-0 min-[1000px]:max-w-[1680px]">
       <div className="relative w-full h-full">
         <img
-          src="/src/assets/backgrounds/background-decoration.png"
+          src="/assets/backgrounds/background-decoration.png"
           alt="Background decoration"
           className="w-full h-full object-cover"
         />

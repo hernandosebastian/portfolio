@@ -5,8 +5,7 @@ import { NavItem } from "@/features/common/nav-bar/nav-item";
 const HOME_PATH = "/" as const;
 const LINKEDIN_URL = "https://www.linkedin.com/in/sebastianhernando/" as const;
 const GITHUB_URL = "https://github.com/hernandosebastian" as const;
-const CV_PATH =
-  "/src/assets/pdf/sebastian-hernando-curriculum-vitae.pdf" as const;
+const CV_PATH = "/assets/pdf/sebastian-hernando-curriculum-vitae.pdf" as const;
 
 export default function Navbar() {
   const navigate = useNavigate();
