@@ -22,7 +22,8 @@
       "@configs/*": ["./src/configs/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@features/*": ["./src/features/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@layout/*": ["./src/layout/*"]
     }
   },
   "include": ["src"],
