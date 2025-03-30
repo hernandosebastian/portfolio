@@ -4,6 +4,6 @@ import { Project } from "@/interfaces/project.interface";
 
 export const useSeo = (project?: Project) => {
   useEffect(() => {
-    document.title = project ? `${project.title}` : "Sebastian - Portfolio";
+    document.title = project ? `${project.title}` : "Portfolio";
   }, [project]);
 };
