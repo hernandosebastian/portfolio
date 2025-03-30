@@ -67,11 +67,6 @@ export default tseslint.config(
               group: "internal",
               position: "after",
             },
-            {
-              pattern: "@layout/**",
-              group: "internal",
-              position: "after",
-            },
           ],
           "newlines-between": "always",
           alphabetize: {

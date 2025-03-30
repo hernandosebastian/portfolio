@@ -12,7 +12,6 @@ export default defineConfig({
       "@hooks": "/src/hooks",
       "@features": "/src/features",
       "@utils": "/src/utils",
-      "@layout": "/src/layout",
     },
   },
 });
