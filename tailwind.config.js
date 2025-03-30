@@ -4,14 +4,23 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Neue Montreal Regular"', "sans-serif"],
-        "sans-italic": ['"Neue Montreal Italic"', "sans-serif"],
-        "sans-light": ['"Neue Montreal Light"', "sans-serif"],
-        "sans-light-italic": ['"Neue Montreal Light Italic"', "sans-serif"],
-        "sans-medium": ['"Neue Montreal Medium"', "sans-serif"],
-        "sans-medium-italic": ['"Neue Montreal Medium Italic"', "sans-serif"],
-        "sans-bold": ['"Neue Montreal Bold"', "sans-serif"],
-        "sans-bold-italic": ['"Neue Montreal Bold Italic"', "sans-serif"],
+        "neue-montreal": ['"Neue Montreal Regular"', "sans-serif"],
+        "neue-montreal-italic": ['"Neue Montreal Italic"', "sans-serif"],
+        "neue-montreal-light": ['"Neue Montreal Light"', "sans-serif"],
+        "neue-montreal-light-italic": [
+          '"Neue Montreal Light Italic"',
+          "sans-serif",
+        ],
+        "neue-montreal-medium": ['"Neue Montreal Medium"', "sans-serif"],
+        "neue-montreal-medium-italic": [
+          '"Neue Montreal Medium Italic"',
+          "sans-serif",
+        ],
+        "neue-montreal-bold": ['"Neue Montreal Bold"', "sans-serif"],
+        "neue-montreal-bold-italic": [
+          '"Neue Montreal Bold Italic"',
+          "sans-serif",
+        ],
       },
     },
   },

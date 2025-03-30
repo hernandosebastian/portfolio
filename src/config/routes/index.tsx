@@ -1,4 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+
+import Homepage from "@/features/homepage/homepage";
+import Project from "@/features/project/project";
 import Layout from "@/layout";
 
 export const router = createBrowserRouter([
@@ -7,11 +10,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <p>Home</p>,
+        element: <Homepage />,
       },
       {
-        path: "/proyectos/:id",
-        element: <p>Proyectos</p>,
+        path: "/proyecto/:internal_link",
+        element: <Project />,
+      },
+      {
+        path: "*",
+        element: <Navigate to="/" replace />,
       },
     ],
   },
