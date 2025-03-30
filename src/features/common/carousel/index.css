@@ -1,0 +1,35 @@
+.slick-prev:before,
+.slick-next:before {
+  color: #1e40af !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.slick-prev:hover::before,
+.slick-next:hover::before {
+  opacity: 0.75 !important;
+}
+
+.slick-dots li button:before {
+  color: #1e40af !important;
+  transition: all 0.3s ease !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #1e40af !important;
+}
+
+.slick-dots {
+  bottom: -56px !important;
+  background-color: #dbeafe !important;
+  border-radius: 999px !important;
+  width: fit-content;
+  left: 50% !important;
+  transform: translateX(-50%);
+  display: flex !important;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}

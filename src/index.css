@@ -1,16 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a1a1a #4d4d4d;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #1a1a1a;
+}
+
+*::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #1a1a1a;
+}
+
+*::-webkit-scrollbar-thumb:window-inactive {
+  background: #1a1a1a;
+}
+
+#root {
+  width: 100%;
 }
 
 a {
@@ -23,7 +54,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -66,3 +96,52 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: "Neue Montreal Regular";
+  src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Italic";
+  src: url("/fonts/NeueMontreal-Italic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Light";
+  src: url("/fonts/NeueMontreal-Light.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Light Italic";
+  src: url("/fonts/NeueMontreal-LightItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium";
+  src: url("/fonts/NeueMontreal-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium Italic";
+  src: url("/fonts/NeueMontreal-MediumItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url("/fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal Bold Italic";
+  src: url("/fonts/NeueMontreal-BoldItalic.otf") format("opentype");
+  font-display: swap;
+}
+

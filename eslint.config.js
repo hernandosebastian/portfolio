@@ -58,6 +58,11 @@ export default tseslint.config(
               position: "after",
             },
             {
+              pattern: "@utils/**",
+              group: "internal",
+              position: "after",
+            },
+            {
               pattern: "@assets/**",
               group: "internal",
               position: "after",
@@ -84,4 +89,3 @@ export default tseslint.config(
     },
   }
 );
-

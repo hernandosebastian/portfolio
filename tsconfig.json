@@ -21,10 +21,10 @@
       "@assets/*": ["./src/assets/*"],
       "@configs/*": ["./src/configs/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@features/*": ["./src/features/*"]
+      "@features/*": ["./src/features/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
-
