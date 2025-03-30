@@ -6,3 +6,31 @@ Welcome to my portfolio!
 Explore my projects, skills, and what I've been working on.
 
 Live demo: [sebastianhernando-dev.netlify.app](https://sebastianhernando-dev.netlify.app/)
+
+---
+
+### Requirements:
+- Node.js 18+
+
+---
+
+### How to get started:
+
+1. Clone the repository:  
+   `git clone https://github.com/hernandosebastian/portfolio.git`
+
+2. Install dependencies:  
+   `npm ci`
+
+3. Run the development server:  
+   `npm run dev`
+
+4. Open your browser and navigate to `localhost:5173` to view the portfolio.
+
+---
+
+### Tech Stack:
+- React
+- TypeScript
+- React Router DOM
+- Tailwind CSS
