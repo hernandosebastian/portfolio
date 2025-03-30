@@ -20,7 +20,7 @@ function TestimonialContent({ testimonial }: TestimonialProps) {
         ❝
       </span>
       <div className="flex-1 flex items-center justify-center py-6">
-        <p className="text-gray-600 text-left font-neue-montreal max-w-[90%] text-base leading-relaxed tracking-wide">
+        <p className="text-gray-600 text-left font-neue-montreal max-w-[90%] text-base leading-relaxed tracking-wide whitespace-pre-wrap">
           {testimonial.content}
         </p>
       </div>
