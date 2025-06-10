@@ -2,6 +2,12 @@ import { Testimonial } from "@/interfaces/testimonials.interface";
 
 export const testimonialsData: Testimonial[] = [
   {
+    name: "Francisco Merce",
+    content:
+      "Tuve el placer de ser líder técnico de Sebastián durante nuestro trabajo en el proyecto en Bigger.\n Desde el comienzo, se integró rápidamente al equipo, mostrando muy buena disposición para aprender y adaptarse.\nRecibía el feedback de forma muy abierta y lo aplicaba con rapidez, lo que le permitió crecer constantemente en lo técnico y en la forma de encarar los desafíos del proyecto.\nSiempre aportó código claro, bien estructurado y mostró compromiso tanto con la calidad como con los plazos.\nMás allá de lo técnico, es alguien con muy buena comunicación y actitud colaborativa, lo que generaba un ambiente de trabajo muy positivo.\nLo recomiendo sin dudas para cualquier equipo que valore el profesionalismo, la responsabilidad y las ganas de seguir creciendo.",
+    role: "Líder Técnico",
+  },
+  {
     name: "María Clara Masulli",
     content:
       "Fue un placer trabajar con Sebastián.\nEs una persona sumamente responsable, con capacidad de resolver problemas y buscar soluciones frente a los distintos desafíos que puedan aparecer en el proceso de desarrollo de software.\nA su vez, siempre fue muy respetuoso y claro al expresar sus ideas.\nHace que el trabajo se vuelva ameno y es un excelente desarrollador.",
