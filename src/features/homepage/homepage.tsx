@@ -57,7 +57,7 @@ export default function Homepage() {
             fontSize: "clamp(32px, 5vw, 40px)",
             fontWeight: 600,
             lineHeight: 1.2,
-            letterSpacing: "-2.4px",
+            letterSpacing: "clamp(-1.2px, -0.06em, -2.4px)",
           }}
         >
           Lo que me define
@@ -94,7 +94,7 @@ export default function Homepage() {
             fontSize: "clamp(32px, 5vw, 40px)",
             fontWeight: 600,
             lineHeight: 1.2,
-            letterSpacing: "-2.4px",
+            letterSpacing: "clamp(-1.2px, -0.06em, -2.4px)",
           }}
         >
           Trabajo seleccionado
@@ -159,7 +159,7 @@ export default function Homepage() {
             fontSize: "clamp(32px, 5vw, 40px)",
             fontWeight: 600,
             lineHeight: 1.2,
-            letterSpacing: "-2.4px",
+            letterSpacing: "clamp(-1.2px, -0.06em, -2.4px)",
           }}
         >
           Lo que dicen quienes trabajaron conmigo

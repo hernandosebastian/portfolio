@@ -26,19 +26,17 @@ function FeaturedCard({ project }: { project: Project }) {
       style={{
         boxShadow:
           "rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px",
-        minHeight: "420px",
       }}
     >
       {/* Media — 55% */}
       <div
-        className="lg:w-[55%] w-full overflow-hidden border-b border-[#ebebeb] lg:border-b-0 lg:border-r lg:border-[#ebebeb]"
-        style={{ minHeight: "280px" }}
+        className="lg:w-[55%] w-full overflow-hidden border-b border-[#ebebeb] lg:border-b-0 lg:border-r lg:border-[#ebebeb] h-[260px] lg:h-auto"
       >
         <Media project={project} radius="12px 0 0 12px" mobileRadius="12px 12px 0 0" />
       </div>
 
       {/* Info panel — 45% */}
-      <div className="lg:w-[45%] flex flex-col justify-between gap-8 p-8 lg:p-12">
+      <div className="lg:w-[45%] flex flex-col gap-6 p-6 lg:gap-8 lg:p-12 lg:justify-between">
         <Authority project={project} />
 
         <div className="flex flex-col gap-4">
