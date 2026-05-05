@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/* ─── Neue Montreal → Geist role mapping ─────────────────────────────────
+   Regular  (400) → body / reading
+   Medium   (500) → UI / navigation / interactive
+   Bold     (600) → headings / display (mapped to font-weight 600 in Tailwind)
+   ─────────────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-BoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─── Design system tokens ────────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-vercel-black: #171717;
+  --color-pure-white: #ffffff;
+  --color-gray-900: #171717;
+  --color-gray-600: #4d4d4d;
+  --color-gray-500: #666666;
+  --color-gray-400: #808080;
+  --color-gray-100: #ebebeb;
+  --color-gray-50: #fafafa;
+  --color-link-blue: #0072f5;
+  --color-focus-blue: hsla(212, 100%, 48%, 1);
+  --color-badge-bg: #ebf5ff;
+  --color-badge-text: #0068d6;
+
+  /* Fonts */
+  --font-sans: "NeueMontreal", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+}
+
+/* ─── Base styles (inside @layer base so Tailwind utilities override them) ── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: #171717;
+    background-color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  #root {
+    width: 100%;
+  }
+
+  /* color: inherit so links blend in by default,
+     but Tailwind utility classes (text-white etc.) always win
+     because utilities live in @layer utilities > @layer base */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-feature-settings: "liga" 1;
+  }
+
+  /* ─── Scrollbar ─────────────────────────────────────────────────────── */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d0d1d2 #fafafa;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #fafafa;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: #d0d1d2;
+  }
+}
+
+/* ─── Tech marquee animation ──────────────────────────────────────────── */
+@keyframes tech-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.tech-marquee-track {
+  animation: tech-marquee 28s linear infinite;
+}
+
+.tech-marquee-wrapper:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+/* ─── Carousel overrides (design-system compliant) ────────────────────── */
+.slick-prev:before,
+.slick-next:before {
+  color: #171717 !important;
+  opacity: 0.4 !important;
+}
+
+.slick-prev:hover::before,
+.slick-next:hover::before {
+  opacity: 0.8 !important;
+}
+
+.slick-dots li button:before {
+  color: #171717 !important;
+  opacity: 0.3 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #171717 !important;
+  opacity: 0.8 !important;
+}
+
+.slick-dots {
+  bottom: -48px !important;
+  width: fit-content !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  align-items: center;
+  padding: 4px 10px;
+  background: #fafafa !important;
+  border-radius: 9999px !important;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px !important;
+}
