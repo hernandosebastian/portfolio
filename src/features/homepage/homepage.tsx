@@ -203,7 +203,7 @@ const PIPELINE_STEPS = [
     label: "01 — Foco en producto, no en tecnología",
     title: "Trabajo donde el problema lo requiera",
     description:
-      "Entré a proyectos en React, Vue, .NET, Python y AWS sin haberlos usado antes. Lo que no sé lo aprendo en el camino — me certifiqué en AWS Security Specialty en 2 meses porque el proyecto lo pedía.",
+      "Entré a proyectos en Vue, .NET, Python y AWS con una profundidad que no había necesitado antes. Lo que no sé lo aprendo en el camino — me certifiqué en AWS Security Specialty en 2 meses porque la empresa lo requería.",
   },
   {
     color: "#de1d8d",
@@ -217,7 +217,7 @@ const PIPELINE_STEPS = [
     label: "03 — Sistemas que generan ingresos reales",
     title: "No hago demos, hago productos",
     description:
-      "Plataforma de streaming con pasarela de pago, sistema FinOps usado por bancos, herramientas agrícolas con datos de sensores en tiempo real. Código que escala y clientes que pagan.",
+      "Sistema FinOps publicado en AWS Marketplace y usado por bancos, aseguradoras y empresas de salud. Plataforma de streaming con pasarela de pago, herramientas agrícolas con sensores en tiempo real. Código que escala y clientes que pagan.",
   },
 ] as const;
 

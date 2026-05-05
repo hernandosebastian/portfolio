@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
     solution_title:
       "Tres planes en AWS Marketplace con integración agentless",
     solution_description:
-      "Desarrollamos ZenCost con tres planes escalonados publicados en AWS Marketplace: Essentials (visibilidad EC2, RDS y Redshift + scheduling automático), Growth (multi-cuenta con hasta 10 cuentas + optimización de hallazgos de seguridad, billing e IAM + Cloud Excellence Model) y Enterprise (cuentas ilimitadas + visibilidad multi-cloud con EKS, Snowflake y Databricks + inteligencia de Reserved Instances y Savings Plans).\nLa integración es completamente agentless via IAM Role y CloudFormation StackSets — sin instalar nada en las instancias del cliente.",
+      "Desarrollamos ZenCost con tres planes escalonados publicados en AWS Marketplace:\n1. Essentials: visibilidad EC2, RDS y Redshift + scheduling automático de recursos\n2. Growth: multi-cuenta con hasta 10 cuentas + optimización de hallazgos de seguridad, billing e IAM + Cloud Excellence Model\n3. Enterprise: cuentas ilimitadas + visibilidad multi-cloud con EKS, Snowflake y Databricks + inteligencia de Reserved Instances y Savings Plans\nLa integración es completamente agentless via IAM Role y CloudFormation StackSets — sin instalar nada en las instancias del cliente.",
     impact_title:
       "Producto publicado en AWS Marketplace usado por bancos, aseguradoras y empresas de salud",
     impact_description:

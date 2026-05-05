@@ -48,7 +48,7 @@ export default function Testimonial({ testimonial }: TestimonialProps) {
           className="text-[#666666]"
           style={{ fontSize: "12px", fontWeight: 400, lineHeight: 1.33 }}
         >
-          {testimonial.role}
+          {testimonial.role} · {testimonial.company}
         </span>
       </div>
     </div>
