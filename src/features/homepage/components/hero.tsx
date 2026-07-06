@@ -24,7 +24,7 @@ export default function Hero() {
         className="text-[#4d4d4d]"
         style={{ fontSize: "20px", fontWeight: 400, lineHeight: 1.5 }}
       >
-        Full Stack Engineer · Semi Senior
+        Solutions Architect · Full-Stack Developer
       </h2>
 
       {/* Description */}
@@ -41,7 +41,7 @@ export default function Hero() {
       <div className="flex flex-row gap-4 flex-wrap">
         {/* Primary CTA */}
         <a
-          href={`mailto:${EMAIL}?subject=%5BPortfolio%5D%20Contacto%20profesional&body=Hola%20Sebasti%C3%A1n%2C%0A%0A`}
+          href={`mailto:${EMAIL}?subject=Oportunidad%20laboral%20%E2%80%93%20Sebasti%C3%A1n%20Hernando&body=Hola%20Sebasti%C3%A1n%2C%0A%0AMe%20comunico%20por%20una%20oportunidad%3A%0A%0AEmpresa%3A%0ARol%3A%0AModalidad%3A%0A%0ASaludos%2C`}
           className="inline-flex items-center text-white bg-[#171717] rounded-[6px] transition-colors duration-200 hover:bg-[#2a2a2a] focus:outline-none focus-visible:outline-2 focus-visible:outline-[hsla(212,100%,48%,1)]"
           style={{ fontSize: "14px", fontWeight: 500, lineHeight: 1.43, padding: "8px 16px" }}
         >

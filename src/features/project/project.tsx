@@ -27,6 +27,13 @@ export default function Project() {
       detailsTitle: project.solution_title,
       detailsDescription: project.solution_description,
     },
+    ...(project.my_role_description
+      ? [{
+          type: ProjectInformationDetailsType.MY_ROLE,
+          detailsTitle: project.my_role_title || "",
+          detailsDescription: project.my_role_description,
+        }]
+      : []),
     {
       type: ProjectInformationDetailsType.IMPACT,
       detailsTitle: project.impact_title,

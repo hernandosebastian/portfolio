@@ -21,6 +21,8 @@ export interface Project {
   technologies_used_description: string;
   solution_title: string;
   solution_description: string;
+  my_role_title?: string;
+  my_role_description?: string;
   impact_title: string;
   impact_description: string;
   major_challenges_title: string;

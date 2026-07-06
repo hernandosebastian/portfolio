@@ -19,7 +19,7 @@ export const projectsData: Project[] = [
     hasVideo: false,
     screenshotsPrivate: true,
     team: "Alpha-IB · IVCISA",
-    role: "Desarrollador Full Stack Semi Senior",
+    role: "Solutions Architect & Full-Stack Developer",
     year: "2025",
     timeline: "11 meses",
     why_this_project_title:
@@ -30,6 +30,10 @@ export const projectsData: Project[] = [
       "Tres planes en AWS Marketplace con integración agentless",
     solution_description:
       "Desarrollamos ZenCost con tres planes escalonados publicados en AWS Marketplace:\n1. Essentials: visibilidad EC2, RDS y Redshift + scheduling automático de recursos.\n2. Growth: multi-cuenta con hasta 10 cuentas + optimización de hallazgos de seguridad, billing e IAM + Cloud Excellence Model.\n3. Enterprise: cuentas ilimitadas + visibilidad multi-cloud con EKS, Snowflake y Databricks + inteligencia de Reserved Instances y Savings Plans.\nLa integración es completamente agentless via IAM Role y CloudFormation StackSets — sin instalar nada en las instancias del cliente.",
+    my_role_title:
+      "Uno de los tres desarrolladores principales, con ownership de punta a punta",
+    my_role_description:
+      "Fui uno de los tres desarrolladores principales del producto, con ownership de features de punta a punta.\nDiseñé el pipeline de AWS Cost & Usage Report (CUR) que reemplazó al SDK de Cost Explorer, reduciendo un reporte de atribución de costos de más de 5 horas a menos de 5 minutos.\nExtendí la plataforma a Snowflake y Databricks, y construí el onboarding multi-cuenta agentless vía CloudFormation StackSets.\nImplementé el control de acceso multi-tenant con MFA TOTP, y fui responsable de gran parte del UX/UI del frontend.",
     impact_title:
       "Producto publicado en AWS Marketplace usado por bancos, aseguradoras y empresas de salud",
     impact_description:
