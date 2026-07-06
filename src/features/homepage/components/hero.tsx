@@ -1,6 +1,18 @@
 const cloudPractitionerBadge = "/assets/certifications/aws-certified-cloud-practicioner-badge.png";
 const securitySpecialtyBadge = "/assets/certifications/aws-certified-security-specialty-badge.png";
 
+const MAILTO_SUBJECT = "Oportunidad%20laboral%20%E2%80%93%20Sebasti%C3%A1n%20Hernando";
+const MAILTO_BODY =
+  "Hola%20Sebasti%C3%A1n%2C%0A%0A" +
+  "Me%20comunico%20por%20una%20oportunidad%20laboral%3A%0A%0A" +
+  "Empresa%3A%20%0A" +
+  "Rol%3A%20%0A" +
+  "Modalidad%20(remoto%20%2F%20h%C3%ADbrido%20%2F%20presencial)%3A%20%0A" +
+  "Rango%20salarial%20estimado%3A%20%0A" +
+  "Detalles%20adicionales%3A%20%0A%0A" +
+  "Quedo%20atento%20a%20tu%20respuesta.%0A%0A" +
+  "Saludos%2C";
+
 export default function Hero() {
   const EMAIL = "sebastianhernando.dev@gmail.com";
   const LINKEDIN = "https://www.linkedin.com/in/sebastianhernando/";
@@ -41,7 +53,7 @@ export default function Hero() {
       <div className="flex flex-row gap-4 flex-wrap">
         {/* Primary CTA */}
         <a
-          href={`mailto:${EMAIL}?subject=Oportunidad%20laboral%20%E2%80%93%20Sebasti%C3%A1n%20Hernando&body=Hola%20Sebasti%C3%A1n%2C%0A%0AMe%20comunico%20por%20una%20oportunidad%3A%0A%0AEmpresa%3A%0ARol%3A%0AModalidad%3A%0A%0ASaludos%2C`}
+          href={`mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}`}
           className="inline-flex items-center text-white bg-[#171717] rounded-[6px] transition-colors duration-200 hover:bg-[#2a2a2a] focus:outline-none focus-visible:outline-2 focus-visible:outline-[hsla(212,100%,48%,1)]"
           style={{ fontSize: "14px", fontWeight: 500, lineHeight: 1.43, padding: "8px 16px" }}
         >

@@ -2,7 +2,18 @@ import { JSX } from "react";
 import { LinkedinIcon } from "@/icons/linkedin-icon";
 
 const EMAIL = "sebastianhernando.dev@gmail.com" as const;
-const MAILTO = `mailto:${EMAIL}?subject=%5BPortfolio%5D%20Contacto%20profesional&body=Hola%20Sebasti%C3%A1n%2C%0A%0A` as const;
+const MAILTO_SUBJECT = "Oportunidad%20laboral%20%E2%80%93%20Sebasti%C3%A1n%20Hernando";
+const MAILTO_BODY =
+  "Hola%20Sebasti%C3%A1n%2C%0A%0A" +
+  "Me%20comunico%20por%20una%20oportunidad%20laboral%3A%0A%0A" +
+  "Empresa%3A%20%0A" +
+  "Rol%3A%20%0A" +
+  "Modalidad%20(remoto%20%2F%20h%C3%ADbrido%20%2F%20presencial)%3A%20%0A" +
+  "Rango%20salarial%20estimado%3A%20%0A" +
+  "Detalles%20adicionales%3A%20%0A%0A" +
+  "Quedo%20atento%20a%20tu%20respuesta.%0A%0A" +
+  "Saludos%2C";
+const MAILTO = `mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}` as const;
 const LINKEDIN = "https://www.linkedin.com/in/sebastianhernando/" as const;
 const CV = "/assets/pdf/sebastian-hernando-curriculum-vitae.pdf" as const;
 
