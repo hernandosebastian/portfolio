@@ -15,7 +15,7 @@ const MAILTO_BODY =
   "Saludos%2C";
 const MAILTO = `mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}` as const;
 const LINKEDIN = "https://www.linkedin.com/in/sebastianhernando/" as const;
-const CV = "/assets/pdf/sebastian-hernando-curriculum-vitae.pdf" as const;
+const CV = "/assets/pdf/Sebastian_Hernando_CV_ES.pdf" as const;
 
 export default function Footer(): JSX.Element {
   return (

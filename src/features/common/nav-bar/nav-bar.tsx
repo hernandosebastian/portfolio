@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const HOME_PATH = "/" as const;
 const LINKEDIN_URL = "https://www.linkedin.com/in/sebastianhernando/" as const;
-const CV_PATH = "/assets/pdf/sebastian-hernando-curriculum-vitae.pdf" as const;
+const CV_PATH = "/assets/pdf/Sebastian_Hernando_CV_ES.pdf" as const;
 
 export default function Navbar() {
   const navigate = useNavigate();
