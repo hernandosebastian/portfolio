@@ -25,7 +25,11 @@ const ICON_STYLE = { display: "block", flexShrink: 0, filter: "brightness(0) opa
 
 export default function TechMarquee() {
   const { t } = useLocale();
-  const items = [...STACK, ...STACK];
+  // Repeat the stack enough times that the track always overflows even the widest
+  // viewports; the CSS animation shifts by exactly one copy (-25%) so the loop is
+  // seamless. With only two copies, wide screens showed a blank gap after the last
+  // item before the loop restarted.
+  const items = [...STACK, ...STACK, ...STACK, ...STACK];
 
   return (
     <div
@@ -73,7 +77,6 @@ export default function TechMarquee() {
                   alt={tech.name}
                   width={14}
                   height={14}
-                  loading="lazy"
                   style={ICON_STYLE}
                 />
                 <span
