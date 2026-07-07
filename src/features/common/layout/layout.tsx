@@ -1,4 +1,6 @@
 import { Outlet } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import Footer from "@/features/common/footer/footer";
 import Navbar from "@/features/common/nav-bar/nav-bar";
@@ -15,6 +17,8 @@ function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
