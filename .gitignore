@@ -23,3 +23,6 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Generado en build por scripts/generate-sitemap.mjs
+public/sitemap.xml

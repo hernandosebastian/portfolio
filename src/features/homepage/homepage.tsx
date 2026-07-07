@@ -6,11 +6,10 @@ import Hero from "@/features/homepage/components/hero";
 import TechMarquee from "@/features/homepage/components/tech-marquee";
 import ProjectPreview from "@/features/homepage/components/project-preview";
 import Testimonial from "@/features/homepage/components/testimonial";
-import { useSeo } from "@/hooks/use-seo";
+import { Seo } from "@/features/common/seo/seo";
+import { personJsonLd } from "@/features/common/seo/person-schema";
 
 export default function Homepage() {
-  useSeo();
-
   const [showAllTestimonials, setShowAllTestimonials] = useState<boolean>(false);
   const [showAllProjects, setShowAllProjects] = useState<boolean>(false);
 
@@ -25,6 +24,13 @@ export default function Homepage() {
 
   return (
     <div className="flex flex-col w-full">
+      <Seo
+        title="Sebastián Hernando — Solutions Architect · Full-Stack Developer"
+        description="Next.js, Python y AWS — tres años construyendo productos reales para equipos en Australia y Panamá, desde MVPs hasta plataformas en producción usadas por bancos y empresas."
+        path="/"
+        jsonLd={personJsonLd}
+      />
+
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <Hero />
 
