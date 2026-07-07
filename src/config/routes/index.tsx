@@ -1,25 +1,29 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import Layout from "@/features/common/layout/layout";
 import Homepage from "@/features/homepage/homepage";
 import Project from "@/features/project/project";
+import { RootRedirect } from "@/config/routes/root-redirect";
 
 export const router = createBrowserRouter([
   {
+    path: "/:locale",
     element: <Layout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Homepage />,
       },
       {
-        path: "/proyecto/:internal_link",
+        path: "proyecto/:internal_link",
         element: <Project />,
       },
-      {
-        path: "*",
-        element: <Navigate to="/" replace />,
-      },
     ],
+  },
+  {
+    // Any path without a valid locale prefix — including "/" and legacy
+    // "/proyecto/x" links — redirects to the detected-locale equivalent.
+    path: "*",
+    element: <RootRedirect />,
   },
 ]);

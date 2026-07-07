@@ -1,3 +1,5 @@
+import { useLocale } from "@/i18n/i18n-context";
+
 const BASE = "https://cdn.jsdelivr.net/npm/simple-icons/icons";
 
 const STACK = [
@@ -22,7 +24,12 @@ const STACK = [
 const ICON_STYLE = { display: "block", flexShrink: 0, filter: "brightness(0) opacity(0.5)" } as const;
 
 export default function TechMarquee() {
-  const items = [...STACK, ...STACK];
+  const { t } = useLocale();
+  // Repeat the stack enough times that the track always overflows even the widest
+  // viewports; the CSS animation shifts by exactly one copy (-25%) so the loop is
+  // seamless. With only two copies, wide screens showed a blank gap after the last
+  // item before the loop restarted.
+  const items = [...STACK, ...STACK, ...STACK, ...STACK];
 
   return (
     <div
@@ -46,7 +53,7 @@ export default function TechMarquee() {
               whiteSpace: "nowrap",
             }}
           >
-            Stack
+            {t.stack.label}
           </span>
         </div>
 
@@ -70,7 +77,6 @@ export default function TechMarquee() {
                   alt={tech.name}
                   width={14}
                   height={14}
-                  loading="lazy"
                   style={ICON_STYLE}
                 />
                 <span

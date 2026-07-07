@@ -7,9 +7,13 @@ import TechMarquee from "@/features/homepage/components/tech-marquee";
 import ProjectPreview from "@/features/homepage/components/project-preview";
 import Testimonial from "@/features/homepage/components/testimonial";
 import { Seo } from "@/features/common/seo/seo";
-import { personJsonLd } from "@/features/common/seo/person-schema";
+import { getPersonJsonLd } from "@/features/common/seo/person-schema";
+import { useLocale } from "@/i18n/i18n-context";
+import type { PipelineStepText } from "@/i18n/ui";
 
 export default function Homepage() {
+  const { t, locale } = useLocale();
+
   const [showAllTestimonials, setShowAllTestimonials] = useState<boolean>(false);
   const [showAllProjects, setShowAllProjects] = useState<boolean>(false);
 
@@ -25,10 +29,10 @@ export default function Homepage() {
   return (
     <div className="flex flex-col w-full">
       <Seo
-        title="Sebastián Hernando — Solutions Architect · Full-Stack Developer"
-        description="Next.js, Python y AWS — tres años construyendo productos reales para equipos en Australia y Panamá, desde MVPs hasta plataformas en producción usadas por bancos y empresas."
+        title={`Sebastián Hernando — ${t.hero.role}`}
+        description={t.hero.description}
         path="/"
-        jsonLd={personJsonLd}
+        jsonLd={getPersonJsonLd(locale)}
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
@@ -40,7 +44,7 @@ export default function Homepage() {
       {/* Section divider */}
       <div style={{ borderTop: "1px solid #171717" }} />
 
-      {/* ── Mi enfoque ───────────────────────────────────────────────── */}
+      {/* ── Approach ─────────────────────────────────────────────────── */}
       <section className="w-full max-w-[1200px] mx-auto px-8 py-24 flex flex-col gap-16">
         <div>
           <span
@@ -53,7 +57,7 @@ export default function Homepage() {
               letterSpacing: "0.08em",
             }}
           >
-            Enfoque
+            {t.homepage.approachLabel}
           </span>
         </div>
 
@@ -66,10 +70,10 @@ export default function Homepage() {
             letterSpacing: "clamp(-1.2px, -0.06em, -2.4px)",
           }}
         >
-          Lo que me define
+          {t.homepage.approachTitle}
         </h2>
 
-        <Pipeline />
+        <Pipeline steps={t.homepage.pipeline} />
       </section>
 
       {/* Section divider */}
@@ -89,7 +93,7 @@ export default function Homepage() {
               letterSpacing: "0.08em",
             }}
           >
-            Proyectos
+            {t.homepage.projectsLabel}
           </span>
         </div>
 
@@ -103,7 +107,7 @@ export default function Homepage() {
             letterSpacing: "clamp(-1.2px, -0.06em, -2.4px)",
           }}
         >
-          Trabajo seleccionado
+          {t.homepage.projectsTitle}
         </h2>
 
         {/* Featured project — full-width horizontal */}
@@ -118,7 +122,7 @@ export default function Homepage() {
           </div>
         )}
 
-        {/* "Ver más" button */}
+        {/* "See more" button */}
         {!showAllProjects && allGridProjects.length > 2 && (
           <div className="flex justify-center">
             <button
@@ -132,7 +136,7 @@ export default function Homepage() {
                 boxShadow: "rgb(235,235,235) 0px 0px 0px 1px",
               }}
             >
-              Ver más proyectos
+              {t.homepage.moreProjects}
             </button>
           </div>
         )}
@@ -141,7 +145,7 @@ export default function Homepage() {
       {/* Section divider */}
       <div style={{ borderTop: "1px solid #171717" }} />
 
-      {/* ── Testimonios ──────────────────────────────────────────────── */}
+      {/* ── Testimonials ─────────────────────────────────────────────── */}
       <section className="w-full max-w-[1200px] mx-auto px-8 py-24 flex flex-col gap-16">
         {/* Section label */}
         <div>
@@ -155,7 +159,7 @@ export default function Homepage() {
               letterSpacing: "0.08em",
             }}
           >
-            Testimonios
+            {t.homepage.testimonialsLabel}
           </span>
         </div>
 
@@ -168,7 +172,7 @@ export default function Homepage() {
             letterSpacing: "clamp(-1.2px, -0.06em, -2.4px)",
           }}
         >
-          Lo que dicen quienes trabajaron conmigo
+          {t.homepage.testimonialsTitle}
         </h2>
 
         {/* Grid — 2 cols on large, 1 col on small */}
@@ -178,7 +182,7 @@ export default function Homepage() {
           ))}
         </div>
 
-        {/* "Ver más" button */}
+        {/* "See more" button */}
         {!showAllTestimonials && testimonialsData.length > 2 && (
           <div className="flex justify-center">
             <button
@@ -192,7 +196,7 @@ export default function Homepage() {
                 boxShadow: "rgb(235,235,235) 0px 0px 0px 1px",
               }}
             >
-              Ver más testimonios
+              {t.homepage.moreTestimonials}
             </button>
           </div>
         )}
@@ -203,49 +207,27 @@ export default function Homepage() {
 
 /* ─── Pipeline component ────────────────────────────────────────────────── */
 
-const PIPELINE_STEPS = [
-  {
-    color: "#0a72ef",
-    label: "01 — Foco en producto, no en tecnología",
-    title: "Trabajo donde el problema lo requiera",
-    description:
-      "Entré a proyectos en Vue, .NET, Python y AWS con una profundidad que no había necesitado antes. Lo que no sé lo aprendo en el camino — me certifiqué en AWS Security Specialty en 2 meses porque la empresa lo requería.",
-  },
-  {
-    color: "#de1d8d",
-    label: "02 — Remoto internacional desde el día uno",
-    title: "3 años trabajando para equipos en Australia y Panamá",
-    description:
-      "Sin oficina, sin micromanagement. Me integré, entregué y crecí en entornos donde la comunicación y la autonomía son lo que importa.",
-  },
-  {
-    color: "#ff5b4f",
-    label: "03 — Sistemas que generan ingresos reales",
-    title: "No hago demos, hago productos",
-    description:
-      "Sistema FinOps publicado en AWS Marketplace y usado por bancos, aseguradoras y empresas de salud. Plataforma de streaming con pasarela de pago, herramientas agrícolas con sensores en tiempo real. Código que escala y clientes que pagan.",
-  },
-] as const;
+const PIPELINE_COLORS = ["#0a72ef", "#de1d8d", "#ff5b4f"] as const;
 
-function Pipeline() {
+function Pipeline({ steps }: { steps: PipelineStepText[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#ebebeb] rounded-[8px] overflow-hidden"
       style={{ boxShadow: "rgba(0,0,0,0.08) 0px 0px 0px 1px" }}
     >
-      {PIPELINE_STEPS.map((step) => (
-        <PipelineStep key={step.label} step={step} />
+      {steps.map((step, i) => (
+        <PipelineStep key={step.label} step={step} color={PIPELINE_COLORS[i % PIPELINE_COLORS.length]} />
       ))}
     </div>
   );
 }
 
-function PipelineStep({ step }: { step: typeof PIPELINE_STEPS[number] }) {
+function PipelineStep({ step, color }: { step: PipelineStepText; color: string }) {
   return (
     <div className="bg-white flex flex-col gap-6 p-8">
       {/* Colored accent line */}
       <div
         className="w-8 h-[2px] rounded-full"
-        style={{ background: step.color }}
+        style={{ background: color }}
       />
 
       {/* Label */}
@@ -256,7 +238,7 @@ function PipelineStep({ step }: { step: typeof PIPELINE_STEPS[number] }) {
           fontWeight: 500,
           lineHeight: 1.4,
           letterSpacing: "0.04em",
-          color: step.color,
+          color,
           textTransform: "uppercase",
         }}
       >

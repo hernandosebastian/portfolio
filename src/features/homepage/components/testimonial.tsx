@@ -1,10 +1,12 @@
 import { Testimonial as TestimonialType } from "@/interfaces/testimonials.interface";
+import { useLocale } from "@/i18n/i18n-context";
 
 interface TestimonialProps {
   testimonial: TestimonialType;
 }
 
 export default function Testimonial({ testimonial }: TestimonialProps) {
+  const { tData } = useLocale();
   return (
     <div
       className="flex flex-col bg-white rounded-[8px] overflow-hidden h-full"
@@ -29,7 +31,7 @@ export default function Testimonial({ testimonial }: TestimonialProps) {
           className="text-[#4d4d4d] flex-1 whitespace-pre-wrap"
           style={{ fontSize: "16px", fontWeight: 400, lineHeight: 1.5 }}
         >
-          {testimonial.content}
+          {tData(testimonial.content)}
         </p>
       </div>
 
@@ -48,7 +50,7 @@ export default function Testimonial({ testimonial }: TestimonialProps) {
           className="text-[#666666]"
           style={{ fontSize: "12px", fontWeight: 400, lineHeight: 1.33 }}
         >
-          {testimonial.role} · {testimonial.company}
+          {tData(testimonial.role)} · {testimonial.company}
         </span>
       </div>
     </div>

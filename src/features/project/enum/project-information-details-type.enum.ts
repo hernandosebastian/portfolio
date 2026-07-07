@@ -1,9 +1,9 @@
 export enum ProjectInformationDetailsType {
-  WHY_THIS_PROJECT = "¿Por qué este proyecto?",
-  SOLUTION = "Solución",
-  MY_ROLE = "Mi rol",
-  IMPACT = "Impacto",
-  TECHNOLOGIES_USED = "Tecnologías utilizadas",
-  MAJOR_CHALLENGES = "Principales desafíos",
-  SCREENSHOTS = "Capturas de pantalla",
+  WHY_THIS_PROJECT = "why_this_project",
+  SOLUTION = "solution",
+  MY_ROLE = "my_role",
+  IMPACT = "impact",
+  TECHNOLOGIES_USED = "technologies_used",
+  MAJOR_CHALLENGES = "major_challenges",
+  SCREENSHOTS = "screenshots",
 }

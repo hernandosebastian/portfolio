@@ -147,8 +147,9 @@
 
 /* ─── Tech marquee animation ──────────────────────────────────────────── */
 @keyframes tech-marquee {
+  /* Track holds 4 copies of the stack; shifting by one copy (-25%) loops seamlessly. */
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-25%); }
 }
 
 .tech-marquee-track {
