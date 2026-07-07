@@ -4,10 +4,10 @@ import { useLocale } from "@/i18n/i18n-context";
 
 const EMAIL = "sebastianhernando.dev@gmail.com" as const;
 const LINKEDIN = "https://www.linkedin.com/in/sebastianhernando/" as const;
-const CV = "/assets/pdf/Sebastian_Hernando_CV_ES.pdf" as const;
 
 export default function Footer(): JSX.Element {
   const { t } = useLocale();
+  const CV = t.nav.cvPath;
 
   const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
     t.footer.mailtoSubject

@@ -5,7 +5,6 @@ import { useLocale } from "@/i18n/i18n-context";
 import { LanguageSwitcher } from "@/features/common/language-switcher/language-switcher";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/sebastianhernando/" as const;
-const CV_PATH = "/assets/pdf/Sebastian_Hernando_CV_ES.pdf" as const;
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -14,6 +13,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const homePath = localePath("/");
+  const CV_PATH = t.nav.cvPath;
 
   const navLinks = [
     {

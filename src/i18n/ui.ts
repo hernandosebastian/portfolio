@@ -19,6 +19,7 @@ export interface UiStrings {
     resume: string;
     viewCv: string;
     menu: string;
+    cvPath: string;
   };
   hero: {
     role: string;
@@ -74,6 +75,7 @@ export const ui: Record<Locale, UiStrings> = {
       resume: "Resume",
       viewCv: "View CV",
       menu: "Menu",
+      cvPath: "/assets/pdf/Sebastian_Hernando_CV_EN.pdf",
     },
     hero: {
       role: "Solutions Architect · Full-Stack Developer",
@@ -157,6 +159,7 @@ export const ui: Record<Locale, UiStrings> = {
       resume: "Currículum",
       viewCv: "Ver CV",
       menu: "Menú",
+      cvPath: "/assets/pdf/Sebastian_Hernando_CV_ES.pdf",
     },
     hero: {
       role: "Solutions Architect · Full-Stack Developer",
