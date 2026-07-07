@@ -1,4 +1,7 @@
 import { Project } from "@/interfaces/project.interface";
+import { useLocale } from "@/i18n/i18n-context";
+import type { UiStrings } from "@/i18n/ui";
+import type { Localized } from "@/i18n/locale";
 
 /* ── Shared types ────────────────────────────────────────────────────────── */
 
@@ -10,16 +13,26 @@ interface ProjectPreviewProps {
 /* ── Main export — routes to featured or compact variant ─────────────────── */
 
 export default function ProjectPreview({ project, featured = false }: ProjectPreviewProps) {
-  if (featured) return <FeaturedCard project={project} />;
-  return <CompactCard project={project} />;
+  const { t, tData, localePath } = useLocale();
+  const href = localePath(`/proyecto/${project.internal_link}`);
+
+  if (featured) return <FeaturedCard project={project} href={href} t={t} tData={tData} />;
+  return <CompactCard project={project} href={href} t={t} tData={tData} />;
+}
+
+interface CardProps {
+  project: Project;
+  href: string;
+  t: UiStrings;
+  tData: <T>(field: Localized<T>) => T;
 }
 
 /* ── Featured card — full-width, horizontal ──────────────────────────────── */
 
-function FeaturedCard({ project }: { project: Project }) {
+function FeaturedCard({ project, href, t, tData }: CardProps) {
   return (
     <a
-      href={`/proyecto/${project.internal_link}`}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="group flex flex-col lg:flex-row bg-white rounded-[12px] overflow-hidden w-full no-underline"
@@ -37,7 +50,7 @@ function FeaturedCard({ project }: { project: Project }) {
 
       {/* Info panel — 45% */}
       <div className="lg:w-[45%] flex flex-col gap-6 p-6 lg:gap-8 lg:p-12 lg:justify-between">
-        <Authority project={project} />
+        <Authority project={project} tData={tData} />
 
         <div className="flex flex-col gap-4">
           <h3
@@ -55,18 +68,18 @@ function FeaturedCard({ project }: { project: Project }) {
             className="text-[#4d4d4d]"
             style={{ fontSize: "16px", fontWeight: 400, lineHeight: 1.6 }}
           >
-            {project.short_description}
+            {tData(project.short_description)}
           </p>
         </div>
 
-        <MetaRow project={project} />
+        <MetaRow project={project} t={t} tData={tData} />
 
         <div>
           <span
             className="inline-flex items-center text-white bg-[#171717] rounded-[6px] transition-colors duration-200 group-hover:bg-[#2a2a2a]"
             style={{ fontSize: "14px", fontWeight: 500, padding: "8px 16px" }}
           >
-            Ver proyecto
+            {t.project.viewProject}
           </span>
         </div>
       </div>
@@ -76,10 +89,10 @@ function FeaturedCard({ project }: { project: Project }) {
 
 /* ── Compact card — for 2-col grid ──────────────────────────────────────── */
 
-function CompactCard({ project }: { project: Project }) {
+function CompactCard({ project, href, t, tData }: CardProps) {
   return (
     <a
-      href={`/proyecto/${project.internal_link}`}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="group flex flex-col bg-white rounded-[12px] overflow-hidden no-underline h-full"
@@ -95,7 +108,7 @@ function CompactCard({ project }: { project: Project }) {
 
       {/* Content */}
       <div className="flex flex-col gap-5 p-6 flex-1">
-        <Authority project={project} />
+        <Authority project={project} tData={tData} />
 
         <div className="flex flex-col gap-2 flex-1">
           <h3
@@ -121,13 +134,13 @@ function CompactCard({ project }: { project: Project }) {
               overflow: "hidden",
             }}
           >
-            {project.short_description}
+            {tData(project.short_description)}
           </p>
         </div>
 
         {/* Bottom row: meta + arrow */}
         <div className="flex items-end justify-between gap-4 mt-auto pt-4" style={{ borderTop: "1px solid #ebebeb" }}>
-          <MetaRow project={project} compact />
+          <MetaRow project={project} t={t} tData={tData} compact />
           <span
             className="text-[#808080] transition-colors duration-200 group-hover:text-[#171717] shrink-0"
             style={{ fontSize: "16px", lineHeight: 1 }}
@@ -152,6 +165,7 @@ function Media({
   radius: string;
   mobileRadius: string;
 }) {
+  const { tData } = useLocale();
   const style = {
     width: "100%",
     height: "100%",
@@ -179,22 +193,28 @@ function Media({
     <img
       loading="lazy"
       src={project.image}
-      alt={project.title}
+      alt={tData(project.short_description)}
       draggable={false}
       style={style}
     />
   );
 }
 
-function Authority({ project }: { project: Project }) {
-  if (project.autority === "Confidencial") return null;
+function Authority({
+  project,
+  tData,
+}: {
+  project: Project;
+  tData: <T>(field: Localized<T>) => T;
+}) {
+  const authority = tData(project.autority);
 
   return (
     <div className="flex items-center gap-2">
       {project.logo && (
         <img
           src={project.logo}
-          alt={project.autority}
+          alt={authority}
           className="rounded-full object-cover"
           style={{ width: "20px", height: "20px" }}
         />
@@ -203,20 +223,37 @@ function Authority({ project }: { project: Project }) {
         className="text-[#808080]"
         style={{ fontSize: "12px", fontWeight: 500, lineHeight: 1.33 }}
       >
-        {project.autority}
+        {authority}
       </span>
     </div>
   );
 }
 
-function MetaRow({ project, compact = false }: { project: Project; compact?: boolean }) {
-  const items = compact
-    ? [{ label: "Año", value: project.year }, { label: "Duración", value: project.timeline }]
-    : [{ label: "Rol", value: project.role }, { label: "Año", value: project.year }, { label: "Duración", value: project.timeline }];
+function MetaRow({
+  project,
+  t,
+  tData,
+  compact = false,
+}: {
+  project: Project;
+  t: UiStrings;
+  tData: <T>(field: Localized<T>) => T;
+  compact?: boolean;
+}) {
+  const metaItems = compact
+    ? [
+        { label: t.project.year, value: project.year },
+        { label: t.project.duration, value: tData(project.timeline) },
+      ]
+    : [
+        { label: t.project.role, value: tData(project.role) },
+        { label: t.project.year, value: project.year },
+        { label: t.project.duration, value: tData(project.timeline) },
+      ];
 
   return (
     <div className="flex gap-6 flex-wrap">
-      {items.map(({ label, value }) => (
+      {metaItems.map(({ label, value }) => (
         <div key={label} className="flex flex-col gap-1">
           <span
             className="uppercase text-[#808080]"

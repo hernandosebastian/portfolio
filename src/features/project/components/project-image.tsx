@@ -1,5 +1,6 @@
 import type { ProjectInformationImage } from "@/features/project/interfaces/project-information-image.interface";
 import { ProjectInformationDetailsType } from "@/features/project/enum/project-information-details-type.enum";
+import { useLocale } from "@/i18n/i18n-context";
 
 interface ProjectImageProps {
   type: ProjectInformationDetailsType;
@@ -8,6 +9,8 @@ interface ProjectImageProps {
 }
 
 export function ProjectImage({ type, images, screenshotsPrivate }: ProjectImageProps) {
+  const { t } = useLocale();
+
   return (
     <div className="flex flex-col gap-8">
       {/* Section label */}
@@ -21,7 +24,7 @@ export function ProjectImage({ type, images, screenshotsPrivate }: ProjectImageP
           letterSpacing: "0.08em",
         }}
       >
-        {type}
+        {t.project.sectionLabels[type]}
       </span>
 
       {screenshotsPrivate ? (
@@ -47,13 +50,13 @@ export function ProjectImage({ type, images, screenshotsPrivate }: ProjectImageP
             className="text-[#808080]"
             style={{ fontSize: "14px", fontWeight: 400, lineHeight: 1.43 }}
           >
-            Las capturas son confidenciales y no pueden mostrarse.
+            {t.project.screenshotsPrivate}
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((image) => (
-            <ScreenshotItem key={image.src} {...image} />
+            <ScreenshotItem key={image.src} image={image} />
           ))}
         </div>
       )}
@@ -61,19 +64,21 @@ export function ProjectImage({ type, images, screenshotsPrivate }: ProjectImageP
   );
 }
 
-function ScreenshotItem({ src, alt, legend }: ProjectInformationImage) {
+function ScreenshotItem({ image }: { image: ProjectInformationImage }) {
+  const { tData } = useLocale();
+
   return (
     <div className="flex flex-col gap-3">
       <a
-        href={src}
+        href={image.src}
         target="_blank"
         rel="noopener noreferrer"
         className="block overflow-hidden rounded-[8px] transition-opacity duration-200 hover:opacity-90"
         style={{ boxShadow: "rgb(235,235,235) 0px 0px 0px 1px" }}
       >
         <img
-          src={src}
-          alt={alt}
+          src={image.src}
+          alt={tData(image.alt)}
           loading="lazy"
           className="w-full h-full object-cover rounded-[8px]"
         />
@@ -82,7 +87,7 @@ function ScreenshotItem({ src, alt, legend }: ProjectInformationImage) {
         className="text-[#666666]"
         style={{ fontSize: "12px", fontWeight: 400, lineHeight: 1.33 }}
       >
-        {legend}
+        {tData(image.legend)}
       </p>
     </div>
   );

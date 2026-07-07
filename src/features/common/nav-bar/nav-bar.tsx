@@ -1,37 +1,38 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const HOME_PATH = "/" as const;
+import { useLocale } from "@/i18n/i18n-context";
+import { LanguageSwitcher } from "@/features/common/language-switcher/language-switcher";
+
 const LINKEDIN_URL = "https://www.linkedin.com/in/sebastianhernando/" as const;
 const CV_PATH = "/assets/pdf/Sebastian_Hernando_CV_ES.pdf" as const;
 
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t, localePath } = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const homePath = localePath("/");
 
   const navLinks = [
     {
-      label: "Home",
-      href: HOME_PATH,
+      label: t.nav.home,
+      href: homePath,
       onClick: () => {
-        const isHomePage = location.pathname === HOME_PATH;
-        if (!isHomePage) navigate(HOME_PATH);
+        if (location.pathname !== homePath) navigate(homePath);
         setMobileOpen(false);
       },
-      isInternal: true,
     },
     {
-      label: "LinkedIn",
+      label: t.nav.linkedin,
       href: LINKEDIN_URL,
       onClick: () => { window.open(LINKEDIN_URL, "_blank"); setMobileOpen(false); },
-      isInternal: false,
     },
     {
-      label: "Currículum",
+      label: t.nav.resume,
       href: CV_PATH,
       onClick: () => { window.open(CV_PATH, "_blank"); setMobileOpen(false); },
-      isInternal: false,
     },
   ];
 
@@ -43,8 +44,8 @@ export default function Navbar() {
       <div className="max-w-[1200px] mx-auto px-8 h-14 flex items-center justify-between">
         {/* Logo / Name */}
         <a
-          href={HOME_PATH}
-          onClick={(e) => { e.preventDefault(); navigate(HOME_PATH); }}
+          href={homePath}
+          onClick={(e) => { e.preventDefault(); navigate(homePath); }}
           className="text-[16px] font-semibold text-[#171717] tracking-[-0.32px] leading-none cursor-pointer select-none"
           style={{ fontWeight: 600 }}
         >
@@ -54,7 +55,7 @@ export default function Navbar() {
         {/* Center nav links — desktop */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isActive = link.href === HOME_PATH && location.pathname === HOME_PATH;
+            const isActive = link.href === homePath && location.pathname === homePath;
             return (
               <a
                 key={link.label}
@@ -73,15 +74,16 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA — desktop */}
-        <div className="hidden md:block">
+        {/* Right side — language switcher + CTA (desktop) */}
+        <div className="hidden md:flex items-center gap-6">
+          <LanguageSwitcher />
           <a
             href={CV_PATH}
             onClick={(e) => { e.preventDefault(); window.open(CV_PATH, "_blank"); }}
             className="inline-flex items-center text-[14px] font-medium text-white bg-[#171717] px-4 py-2 rounded-[6px] leading-[1.43] transition-colors duration-200 hover:bg-[#2a2a2a] focus:outline-none focus-visible:outline-2 focus-visible:outline-[hsla(212,100%,48%,1)]"
             style={{ fontWeight: 500 }}
           >
-            Ver CV
+            {t.nav.viewCv}
           </a>
         </div>
 
@@ -89,7 +91,7 @@ export default function Navbar() {
         <button
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] rounded-full focus:outline-none focus-visible:outline-2 focus-visible:outline-[hsla(212,100%,48%,1)]"
           onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Menú"
+          aria-label={t.nav.menu}
         >
           <span
             className="block w-5 h-[1.5px] bg-[#171717] transition-all duration-200"
@@ -113,7 +115,7 @@ export default function Navbar() {
           style={{ boxShadow: "rgba(0,0,0,0.08) 0px 1px 0px 0px" }}
         >
           {navLinks.map((link) => {
-            const isActive = link.href === HOME_PATH && location.pathname === HOME_PATH;
+            const isActive = link.href === homePath && location.pathname === homePath;
             return (
               <a
                 key={link.label}
@@ -132,8 +134,11 @@ export default function Navbar() {
             className="inline-flex items-center justify-center text-[14px] font-medium text-white bg-[#171717] px-4 py-2 rounded-[6px] w-fit"
             style={{ fontWeight: 500 }}
           >
-            Ver CV
+            {t.nav.viewCv}
           </a>
+          <div className="pt-2">
+            <LanguageSwitcher onNavigate={() => setMobileOpen(false)} />
+          </div>
         </div>
       )}
     </header>

@@ -1,4 +1,5 @@
 import { ProjectInformationDetailsType } from "@/features/project/enum/project-information-details-type.enum";
+import { useLocale } from "@/i18n/i18n-context";
 
 interface ProjectGeneralInformationProps {
   type: ProjectInformationDetailsType;
@@ -11,6 +12,7 @@ export function ProjectGeneralInformation({
   detailsTitle,
   detailsDescription,
 }: ProjectGeneralInformationProps) {
+  const { t } = useLocale();
   return (
     <div className="flex flex-col gap-4">
       {/* Section label */}
@@ -24,7 +26,7 @@ export function ProjectGeneralInformation({
           letterSpacing: "0.08em",
         }}
       >
-        {type}
+        {t.project.sectionLabels[type]}
       </span>
 
       {/* Title */}

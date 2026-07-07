@@ -6,46 +6,48 @@ import { Separator } from "@/features/project/components/separator";
 import { ProjectInformationDetailsType } from "@/features/project/enum/project-information-details-type.enum";
 import { getProjectByInternalLink } from "@/features/project/utils/get-project-by-internal-link";
 import { Seo } from "@/features/common/seo/seo";
+import { useLocale } from "@/i18n/i18n-context";
 
 export default function Project() {
   const { internal_link } = useParams();
+  const { tData, localePath } = useLocale();
   const project = getProjectByInternalLink(internal_link || "");
 
   if (!project) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={localePath("/")} replace />;
   }
 
   const projectInformationDetails = [
     {
       type: ProjectInformationDetailsType.WHY_THIS_PROJECT,
-      detailsTitle: project.why_this_project_title,
-      detailsDescription: project.why_this_project_description,
+      detailsTitle: tData(project.why_this_project_title),
+      detailsDescription: tData(project.why_this_project_description),
     },
     {
       type: ProjectInformationDetailsType.SOLUTION,
-      detailsTitle: project.solution_title,
-      detailsDescription: project.solution_description,
+      detailsTitle: tData(project.solution_title),
+      detailsDescription: tData(project.solution_description),
     },
     ...(project.my_role_description
       ? [{
           type: ProjectInformationDetailsType.MY_ROLE,
-          detailsTitle: project.my_role_title || "",
-          detailsDescription: project.my_role_description,
+          detailsTitle: project.my_role_title ? tData(project.my_role_title) : "",
+          detailsDescription: tData(project.my_role_description),
         }]
       : []),
     {
       type: ProjectInformationDetailsType.IMPACT,
-      detailsTitle: project.impact_title,
-      detailsDescription: project.impact_description,
+      detailsTitle: tData(project.impact_title),
+      detailsDescription: tData(project.impact_description),
     },
     {
       type: ProjectInformationDetailsType.MAJOR_CHALLENGES,
-      detailsTitle: project.major_challenges_title,
-      detailsDescription: project.major_challenges_description,
+      detailsTitle: tData(project.major_challenges_title),
+      detailsDescription: tData(project.major_challenges_description),
     },
     {
       type: ProjectInformationDetailsType.TECHNOLOGIES_USED,
-      detailsDescription: project.technologies_used_description,
+      detailsDescription: tData(project.technologies_used_description),
       detailsTitle: "",
     },
     ...(project.screenshotsPrivate || project.screenshots.length > 0
@@ -63,7 +65,7 @@ export default function Project() {
     <div className="w-full">
       <Seo
         title={`${project.title} — Sebastián Hernando`}
-        description={project.short_description}
+        description={tData(project.short_description)}
         path={`/proyecto/${project.internal_link}`}
         image={project.image}
         type="article"

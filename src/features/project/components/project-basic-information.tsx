@@ -1,10 +1,17 @@
 import { Project } from "@/interfaces/project.interface";
+import { useLocale } from "@/i18n/i18n-context";
 
 export function ProjectBasicInformation({ project }: { project: Project }) {
+  const { t, tData } = useLocale();
+
   const genericInformation = [
-    { title: "Equipo", description: project.team, icon: <TeamIcon /> },
-    { title: "Rol", description: project.role, icon: <RoleIcon /> },
-    { title: "Año — Duración", description: `${project.year} · ${project.timeline}`, icon: <YearIcon /> },
+    { title: t.project.team, description: tData(project.team), icon: <TeamIcon /> },
+    { title: t.project.role, description: tData(project.role), icon: <RoleIcon /> },
+    {
+      title: t.project.yearDuration,
+      description: `${project.year} · ${tData(project.timeline)}`,
+      icon: <YearIcon />,
+    },
   ];
 
   return (
@@ -26,7 +33,7 @@ export function ProjectBasicInformation({ project }: { project: Project }) {
           className="text-[#4d4d4d] max-w-[600px] mx-auto"
           style={{ fontSize: "20px", fontWeight: 400, lineHeight: 1.8 }}
         >
-          {project.short_description}
+          {tData(project.short_description)}
         </p>
         {project.website_url && (
           <a
@@ -74,7 +81,7 @@ export function ProjectBasicInformation({ project }: { project: Project }) {
                   <path d="M14 2h6v6" />
                   <path d="M10 14L20 4" />
                 </svg>
-                AWS Marketplace · {label}
+                {t.project.marketplace} · {label}
               </a>
             ))}
           </div>

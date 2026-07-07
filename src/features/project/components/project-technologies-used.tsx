@@ -1,6 +1,7 @@
 import { ProjectInformationDetailsType } from "@/features/project/enum/project-information-details-type.enum";
 import { TechnologySection } from "@/features/project/interfaces/technology-section.interface";
 import { getSectionsByDescription } from "@/features/project/utils/get-sections-by-description";
+import { useLocale } from "@/i18n/i18n-context";
 
 interface ProjectTechnologiesUsedProps {
   type: ProjectInformationDetailsType;
@@ -11,6 +12,7 @@ export function ProjectTechnologiesUsed({
   type,
   detailsDescription,
 }: ProjectTechnologiesUsedProps) {
+  const { t } = useLocale();
   const sections = getSectionsByDescription(detailsDescription);
 
   return (
@@ -26,7 +28,7 @@ export function ProjectTechnologiesUsed({
           letterSpacing: "0.08em",
         }}
       >
-        {type}
+        {t.project.sectionLabels[type]}
       </span>
 
       {/* Cards grid */}

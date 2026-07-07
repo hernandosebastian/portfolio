@@ -1,21 +1,16 @@
+import { useLocale } from "@/i18n/i18n-context";
+
 const cloudPractitionerBadge = "/assets/certifications/aws-certified-cloud-practicioner-badge.png";
 const securitySpecialtyBadge = "/assets/certifications/aws-certified-security-specialty-badge.png";
 
-const MAILTO_SUBJECT = "Oportunidad%20laboral%20%E2%80%93%20Sebasti%C3%A1n%20Hernando";
-const MAILTO_BODY =
-  "Hola%20Sebasti%C3%A1n%2C%0A%0A" +
-  "Me%20comunico%20por%20una%20oportunidad%20laboral%3A%0A%0A" +
-  "Empresa%3A%20%0A" +
-  "Rol%3A%20%0A" +
-  "Modalidad%20(remoto%20%2F%20h%C3%ADbrido%20%2F%20presencial)%3A%20%0A" +
-  "Rango%20salarial%20estimado%3A%20%0A" +
-  "Detalles%20adicionales%3A%20%0A%0A" +
-  "Quedo%20atento%20a%20tu%20respuesta.%0A%0A" +
-  "Saludos%2C";
-
 export default function Hero() {
+  const { t } = useLocale();
   const EMAIL = "sebastianhernando.dev@gmail.com";
   const LINKEDIN = "https://www.linkedin.com/in/sebastianhernando/";
+
+  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
+    t.hero.mailtoSubject
+  )}&body=${encodeURIComponent(t.hero.mailtoBody)}`;
 
   return (
     <section className="w-full max-w-[1200px] mx-auto px-8 pt-24 pb-16 flex flex-col gap-8">
@@ -36,7 +31,7 @@ export default function Hero() {
         className="text-[#4d4d4d]"
         style={{ fontSize: "20px", fontWeight: 400, lineHeight: 1.5 }}
       >
-        Solutions Architect · Full-Stack Developer
+        {t.hero.role}
       </h2>
 
       {/* Description */}
@@ -44,20 +39,18 @@ export default function Hero() {
         className="text-[#4d4d4d] max-w-[600px]"
         style={{ fontSize: "18px", fontWeight: 400, lineHeight: 1.7 }}
       >
-        Next.js, Python y AWS — tres años construyendo productos reales para
-        equipos en Australia y Panamá, desde MVPs hasta plataformas en
-        producción usadas por bancos y empresas.
+        {t.hero.description}
       </p>
 
       {/* CTAs */}
       <div className="flex flex-row gap-4 flex-wrap">
         {/* Primary CTA */}
         <a
-          href={`mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}`}
+          href={mailto}
           className="inline-flex items-center text-white bg-[#171717] rounded-[6px] transition-colors duration-200 hover:bg-[#2a2a2a] focus:outline-none focus-visible:outline-2 focus-visible:outline-[hsla(212,100%,48%,1)]"
           style={{ fontSize: "14px", fontWeight: 500, lineHeight: 1.43, padding: "8px 16px" }}
         >
-          Contactar
+          {t.hero.contact}
         </a>
 
         {/* Secondary CTA */}
@@ -74,11 +67,11 @@ export default function Hero() {
             boxShadow: "rgb(235,235,235) 0px 0px 0px 1px",
           }}
         >
-          Ver LinkedIn
+          {t.hero.viewLinkedin}
         </a>
       </div>
 
-      {/* ── Certificaciones AWS ──────────────────────────────────────────── */}
+      {/* ── AWS certifications ──────────────────────────────────────────── */}
       <div className="flex flex-col gap-6 pt-8" style={{ borderTop: "1px solid #ebebeb" }}>
         <span
           className="uppercase text-[#808080]"
@@ -90,7 +83,7 @@ export default function Hero() {
             letterSpacing: "0.08em",
           }}
         >
-          Certificaciones
+          {t.hero.certifications}
         </span>
 
         <div className="grid grid-cols-2 gap-4 max-w-[480px]">
@@ -99,12 +92,14 @@ export default function Hero() {
             name="Security Specialty"
             issuer="Amazon Web Services"
             href="https://www.credly.com/badges/a1a0ad98-d1bb-4557-9ea1-9586d87c5ce9"
+            viewCredentialLabel={t.hero.viewCredential}
           />
           <CertBadge
             src={cloudPractitionerBadge}
             name="Cloud Practitioner"
             issuer="Amazon Web Services"
             href="https://www.credly.com/badges/9efd1c97-0a8c-405d-86c4-7a4b6d21775e"
+            viewCredentialLabel={t.hero.viewCredential}
           />
         </div>
       </div>
@@ -119,9 +114,10 @@ interface CertBadgeProps {
   name: string;
   issuer: string;
   href: string;
+  viewCredentialLabel: string;
 }
 
-function CertBadge({ src, name, issuer, href }: CertBadgeProps) {
+function CertBadge({ src, name, issuer, href, viewCredentialLabel }: CertBadgeProps) {
   return (
     <a
       href={href}
@@ -165,7 +161,7 @@ function CertBadge({ src, name, issuer, href }: CertBadgeProps) {
         </span>
       </div>
 
-      {/* "Ver credencial" — aparece en hover */}
+      {/* "View credential" — appears on hover */}
       <span
         className="text-[#0072f5] transition-opacity duration-200"
         style={{
@@ -182,7 +178,7 @@ function CertBadge({ src, name, issuer, href }: CertBadgeProps) {
           card.addEventListener("mouseleave", () => { el.style.opacity = "0"; });
         }}
       >
-        Ver credencial ↗
+        {viewCredentialLabel}
       </span>
     </a>
   );

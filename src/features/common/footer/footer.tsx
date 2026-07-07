@@ -1,23 +1,18 @@
 import { JSX } from "react";
 import { LinkedinIcon } from "@/icons/linkedin-icon";
+import { useLocale } from "@/i18n/i18n-context";
 
 const EMAIL = "sebastianhernando.dev@gmail.com" as const;
-const MAILTO_SUBJECT = "Oportunidad%20laboral%20%E2%80%93%20Sebasti%C3%A1n%20Hernando";
-const MAILTO_BODY =
-  "Hola%20Sebasti%C3%A1n%2C%0A%0A" +
-  "Me%20comunico%20por%20una%20oportunidad%20laboral%3A%0A%0A" +
-  "Empresa%3A%20%0A" +
-  "Rol%3A%20%0A" +
-  "Modalidad%20(remoto%20%2F%20h%C3%ADbrido%20%2F%20presencial)%3A%20%0A" +
-  "Rango%20salarial%20estimado%3A%20%0A" +
-  "Detalles%20adicionales%3A%20%0A%0A" +
-  "Quedo%20atento%20a%20tu%20respuesta.%0A%0A" +
-  "Saludos%2C";
-const MAILTO = `mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}` as const;
 const LINKEDIN = "https://www.linkedin.com/in/sebastianhernando/" as const;
 const CV = "/assets/pdf/Sebastian_Hernando_CV_ES.pdf" as const;
 
 export default function Footer(): JSX.Element {
+  const { t } = useLocale();
+
+  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
+    t.footer.mailtoSubject
+  )}&body=${encodeURIComponent(t.footer.mailtoBody)}`;
+
   return (
     <footer className="w-full bg-white" style={{ borderTop: "1px solid #171717" }}>
       <div className="max-w-[1200px] mx-auto px-8 py-24 flex flex-col items-start sm:items-center gap-8">
@@ -31,7 +26,7 @@ export default function Footer(): JSX.Element {
             letterSpacing: "clamp(-1.28px, -0.05em, -2.4px)",
           }}
         >
-          ¿Interesado en colaborar o en contacto profesional?
+          {t.footer.heading}
         </h2>
 
         {/* Subtext */}
@@ -39,21 +34,21 @@ export default function Footer(): JSX.Element {
           className="text-left sm:text-center text-[#4d4d4d]"
           style={{ fontSize: "20px", fontWeight: 400, lineHeight: 1.8 }}
         >
-          Estaré encantado de responder a cualquier consulta o propuesta.
+          {t.footer.subtext}
         </p>
 
         {/* Primary CTA */}
         <a
-          href={MAILTO}
+          href={mailto}
           className="inline-flex items-center text-white bg-[#171717] rounded-[6px] transition-colors duration-200 hover:bg-[#2a2a2a] focus:outline-none focus-visible:outline-2 focus-visible:outline-[hsla(212,100%,48%,1)]"
           style={{ fontSize: "14px", fontWeight: 500, lineHeight: 1.43, padding: "8px 16px" }}
         >
-          Enviar un E-Mail
+          {t.footer.sendEmail}
         </a>
 
         {/* Social links */}
         <div className="flex items-center gap-2">
-          <SocialLink href={LINKEDIN} label="LinkedIn">
+          <SocialLink href={LINKEDIN} label={t.footer.linkedin}>
             <LinkedinIcon />
           </SocialLink>
           <a
@@ -70,7 +65,7 @@ export default function Footer(): JSX.Element {
               boxShadow: "rgb(235,235,235) 0px 0px 0px 1px",
             }}
           >
-            Ver CV ↗
+            {t.footer.viewCv} ↗
           </a>
         </div>
 

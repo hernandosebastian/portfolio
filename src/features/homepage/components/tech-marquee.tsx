@@ -1,3 +1,5 @@
+import { useLocale } from "@/i18n/i18n-context";
+
 const BASE = "https://cdn.jsdelivr.net/npm/simple-icons/icons";
 
 const STACK = [
@@ -22,6 +24,7 @@ const STACK = [
 const ICON_STYLE = { display: "block", flexShrink: 0, filter: "brightness(0) opacity(0.5)" } as const;
 
 export default function TechMarquee() {
+  const { t } = useLocale();
   const items = [...STACK, ...STACK];
 
   return (
@@ -46,7 +49,7 @@ export default function TechMarquee() {
               whiteSpace: "nowrap",
             }}
           >
-            Stack
+            {t.stack.label}
           </span>
         </div>
 
