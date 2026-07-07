@@ -5,12 +5,11 @@ import { ProjectInformationDetails } from "@/features/project/components/project
 import { Separator } from "@/features/project/components/separator";
 import { ProjectInformationDetailsType } from "@/features/project/enum/project-information-details-type.enum";
 import { getProjectByInternalLink } from "@/features/project/utils/get-project-by-internal-link";
-import { useSeo } from "@/hooks/use-seo";
+import { Seo } from "@/features/common/seo/seo";
 
 export default function Project() {
   const { internal_link } = useParams();
   const project = getProjectByInternalLink(internal_link || "");
-  useSeo(project);
 
   if (!project) {
     return <Navigate to="/" replace />;
@@ -62,6 +61,14 @@ export default function Project() {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`${project.title} — Sebastián Hernando`}
+        description={project.short_description}
+        path={`/proyecto/${project.internal_link}`}
+        image={project.image}
+        type="article"
+      />
+
       {/* Header section */}
       <div className="max-w-[1200px] mx-auto px-8 py-24">
         <ProjectBasicInformation project={project} />
